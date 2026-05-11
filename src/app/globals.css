@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FDFAF5;
+  --foreground: #3B2208;
+
+  /* ── Brand Browns ── */
+  --color-brown-deep:     #3B2208;
+  --color-brown-warm:     #6B3D1E;
+  --color-brown-cinnamon: #8B5A2B;
+  --color-brown-sand:     #C49A6C;
+
+  /* ── Brand Greens ── */
+  --color-green-deep:     #2D4A1E;
+  --color-green-leaf:     #4A7A30;
+  --color-green-fresh:    #6BA83F;
+  --color-green-sage:     #A8C97A;
+
+  /* ── Gold Accent ── */
+  --color-gold:           #C8922A;
+  --color-gold-light:     #E8BF6A;
+
+  /* ── Backgrounds ── */
+  --color-bg-page:        #FDFAF5;
+  --color-bg-surface:     #F8F1E4;
+  --color-bg-muted:       #F0E6D3;
+  --color-border-warm:    #E0D4C0;
+
+  /* ── Text ── */
+  --color-text-heading:   #3B2208;
+  --color-text-body:      #4A3020;
+  --color-text-muted:     #7A6050;
+
+  /* ── Dark Surfaces ── */
+  --color-dark-bark:      #1E1208;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Saffron / Primary — kept for legacy Tailwind class compat */
+  --color-saffron-50: #fff8ed;
+  --color-saffron-100: #ffefd4;
+  --color-saffron-200: #ffdba8;
+  --color-saffron-300: #ffc170;
+  --color-saffron-400: #ff9d36;
+  --color-saffron-500: #ff820f;
+  --color-saffron-600: #f06806;
+  --color-saffron-700: #c74e07;
+  --color-saffron-800: #9e3d0e;
+  --color-saffron-900: #7f340f;
+
+  /* Spice / Neutral Warm */
+  --color-spice-50: #faf6f1;
+  --color-spice-100: #f0e8dd;
+  --color-spice-200: #e0cfbb;
+  --color-spice-300: #cdb092;
+  --color-spice-400: #b98f6c;
+  --color-spice-500: #ab7a56;
+  --color-spice-600: #95634a;
+  --color-spice-700: #7c4f3e;
+  --color-spice-800: #674237;
+  --color-spice-900: #56382f;
+  --color-spice-950: #2e1c18;
+
+  /* Curry / Accent Gold */
+  --color-curry-50: #fefce8;
+  --color-curry-100: #fef9c3;
+  --color-curry-200: #fef08a;
+  --color-curry-300: #fde047;
+  --color-curry-400: #facc15;
+  --color-curry-500: #eab308;
+  --color-curry-600: #ca8a04;
+  --color-curry-700: #a16207;
+  --color-curry-800: #854d0e;
+  --color-curry-900: #713f12;
+
+  /* Fonts */
+  --font-heading: var(--font-inter);
+  --font-body: var(--font-inter);
+  --font-sans: var(--font-inter);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1E1208;
+    --foreground: #F8F1E4;
+  }
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Hide main scrollbar */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Font classes */
+.font-heading {
+  font-family: var(--font-heading), sans-serif;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-surface) 25%,
+    var(--color-bg-muted) 50%,
+    var(--color-bg-surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
