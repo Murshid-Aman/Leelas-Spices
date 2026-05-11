@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { X, Home, ShoppingBag, LogIn, UserPlus, Info, User } from 'lucide-react';
+import { X, Home, ShoppingBag, LogIn, UserPlus, Info, User, ChefHat } from 'lucide-react';
 import { ROUTES } from '@/lib/constants';
 import { useTranslation } from '@/context/LanguageContext';
 import { useAuthStore } from '@/store/authStore';
@@ -18,6 +18,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const MENU_ITEMS = [
     { href: ROUTES.HOME, label: t('nav.home') || 'Home', icon: Home },
     { href: ROUTES.PRODUCTS, label: t('nav.shop') || 'Shop', icon: ShoppingBag },
+    { href: ROUTES.RECIPES, label: t('nav.recipes') || 'Recipes', icon: ChefHat },
     { href: ROUTES.ABOUT, label: t('nav.about') || 'About', icon: Info },
   ];
 

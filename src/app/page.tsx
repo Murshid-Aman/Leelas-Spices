@@ -225,7 +225,6 @@ export default function HomePage() {
 
       {/* Community Testimonials */}
       <Testimonials />
-
     </div>
   );
 }

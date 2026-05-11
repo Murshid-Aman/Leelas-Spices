@@ -9,6 +9,7 @@ export const ROUTES = {
   PROFILE: '/profile',
   ABOUT: '/about',
   WISHLIST: '/wishlist',
+  RECIPES: '/recipes',
   ADMIN: {
     HOME: '/admin',
     LOGIN: '/admin/login',

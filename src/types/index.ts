@@ -14,3 +14,5 @@ export type {
 } from './user';
 
 export type { ApiResponse, PaginatedResponse } from './api';
+
+export type { RecipeType, RecipeDifficulty } from './recipe';

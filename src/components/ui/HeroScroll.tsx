@@ -97,19 +97,20 @@ export function HeroScroll() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative h-[85vh] w-full overflow-hidden bg-[#3B2208]" id="hero-carousel">
+    <section ref={containerRef} className="relative w-full overflow-hidden bg-[#3B2208]" id="hero-carousel">
       {/* ── IMAGE SLIDES ── */}
       <div ref={slidesWrapperRef} className="relative h-full w-full">
         {SLIDES.map((slide, i) => (
           <div
             key={slide.id}
-            className="absolute inset-0 w-full h-full overflow-hidden"
+            className={`${i === 0 ? 'relative' : 'absolute inset-0'} w-full overflow-hidden`}
           >
             <Image
               src={slide.image}
               alt=""
-              fill
-              className="object-cover"
+              width={1920}
+              height={800}
+              className="w-full h-auto block"
               priority={i === 0}
               onError={(e) => {
                 // Fallback to a placeholder if the local file is missing

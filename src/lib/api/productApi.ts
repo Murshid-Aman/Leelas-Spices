@@ -36,5 +36,5 @@ export async function getProductsByCategory(
  */
 export async function getFeaturedProducts(): Promise<ProductType[]> {
   await new Promise((r) => setTimeout(r, 200));
-  return MOCK_PRODUCTS.filter((p) => p.isFeatured);
+  return MOCK_PRODUCTS.filter((p) => p.isFeatured && !p.image.includes('placeholder.png'));
 }

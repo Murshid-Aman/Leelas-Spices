@@ -8,15 +8,6 @@ import { ProductGrid } from '@/components/product/ProductGrid';
 import { ProductCategory } from '@/types';
 import { useTranslation } from '@/context/LanguageContext';
 
-const CATEGORIES = [
-  { value: 'all', label: 'All Spices' },
-  { value: 'whole-spices', label: 'Whole Spices' },
-  { value: 'ground-spices', label: 'Ground & Powders' },
-  { value: 'spice-blends', label: 'Spice Blends' },
-  { value: 'premium', label: 'Premium' },
-  { value: 'essentials', label: 'Essentials' },
-];
-
 const CATEGORY_DATA: Record<string, { title: string; description: string; accent: string }> = {
   all: {
     title: 'Our Spice Collection',
@@ -76,13 +67,18 @@ function ProductsContent() {
   const [category, setCategory] = useState('all');
   const [sortBy, setSortBy] = useState('featured');
 
-  // Sync category with URL search params
+  // Sync category and search with URL search params
   useEffect(() => {
     const categoryParam = searchParams.get('category');
     if (categoryParam && CATEGORIES.some(c => c.value === categoryParam)) {
       setCategory(categoryParam);
     } else {
       setCategory('all');
+    }
+
+    const searchQuery = searchParams.get('search');
+    if (searchQuery) {
+      setSearch(searchQuery);
     }
   }, [searchParams]);
 
@@ -98,7 +94,7 @@ function ProductsContent() {
         (p) =>
           p.name.toLowerCase().includes(query) ||
           p.shortDescription.toLowerCase().includes(query) ||
-          p.tags.some((t) => t.includes(query)),
+          p.tags.some((t) => t.toLowerCase().includes(query)),
       );
     }
 

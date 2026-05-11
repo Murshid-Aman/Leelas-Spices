@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { ROUTES } from '@/lib/constants';
 import { ShieldCheck } from 'lucide-react';
 import { AuthTransition } from '@/components/auth/AuthTransition';
-import { FloatingSpices } from '@/components/ui/FloatingSpices';
 
 export const metadata: Metadata = {
   title: {
@@ -19,34 +18,31 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative flex min-h-screen items-center justify-center bg-[#FDFAF5] px-4 py-12 overflow-hidden">
-      {/* Background Floating Spices */}
-      <FloatingSpices />
-
+    <div className="relative flex h-screen items-center justify-center bg-[#FDFAF5] px-4 overflow-hidden">
       {/* Main Card Container */}
-      <div className="relative z-10 w-full max-w-md">
-        <div className="rounded-3xl bg-[#F8F1E4]/80 p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-xl border border-white">
+      <div className="relative z-10 w-full max-w-[550px]">
+        <div className="rounded-3xl bg-[#F8F1E4]/80 p-8 pt-12 sm:p-10 sm:pt-14 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-xl border border-white h-[640px] flex flex-col">
           {/* Shared Logo Header */}
-          <div className="mb-10 text-center">
+          <div className="mb-6 text-center">
             <Link href={ROUTES.HOME} className="inline-block transition-transform hover:scale-105 active:scale-95">
               <Image
                 src="/images/logo.png"
                 alt="Leela's Spices"
                 width={120}
                 height={56}
-                className="h-14 w-auto mx-auto"
+                className="h-12 w-auto mx-auto"
                 priority
               />
             </Link>
           </div>
 
-          <AuthTransition>
+          <AuthTransition className="flex-grow flex flex-col justify-start">
             {children}
           </AuthTransition>
 
           {/* Shared Divider & Social Login */}
-          <div className="mt-8 space-y-6">
-            <div className="relative flex items-center py-2">
+          <div className="mt-4 space-y-4">
+            <div className="relative flex items-center py-1">
               <div className="flex-grow border-t border-[#3B2208]/6"></div>
               <span className="mx-4 flex-shrink text-[10px] font-bold uppercase tracking-widest text-[#3B2208]/20">
                 Or continue with
@@ -56,7 +52,7 @@ export default function AuthLayout({
 
             <button
               type="button"
-              className="flex w-full h-12 items-center justify-center gap-3 rounded-full border border-[#3B2208]/10 bg-[#FDFAF5]/50 px-4 text-sm font-semibold text-[#3B2208] transition-all hover:bg-[#3B2208]/3 hover:border-[#3B2208]/20"
+              className="flex w-full h-11 items-center justify-center gap-3 rounded-full border border-[#3B2208]/10 bg-[#FDFAF5]/50 px-4 text-sm font-semibold text-[#3B2208] transition-all hover:bg-[#3B2208]/3 hover:border-[#3B2208]/20"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24">
                 <path
@@ -81,13 +77,10 @@ export default function AuthLayout({
           </div>
 
           {/* Shared Footer Branding */}
-          <div className="mt-12 text-center">
-            <div className="flex items-center justify-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-[#3B2208]/35 mb-2">
-              <ShieldCheck className="h-3.5 w-3.5" /> Authentic Heritage
+          <div className="mt-6 text-center pb-2">
+            <div className="flex items-center justify-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-[#3B2208]/35">
+              <ShieldCheck className="h-3 w-3" /> Authentic Heritage
             </div>
-            <p className="text-[10px] text-[#3B2208]/30 leading-relaxed max-w-[200px] mx-auto">
-              100% natural products. No spam. Just pure flavor.
-            </p>
           </div>
         </div>
       </div>

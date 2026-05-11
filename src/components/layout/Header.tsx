@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ShoppingCart, Heart, Search, User, Menu, X, ChevronDown } from 'lucide-react';
 import { ROUTES, FREE_SHIPPING_THRESHOLD } from '@/lib/constants';
 import { useCart } from '@/hooks/useCart';
@@ -28,6 +29,7 @@ const BUNDLES_DROPDOWN = [
 ];
 
 export function Header() {
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -38,9 +40,17 @@ export function Header() {
   const NAV_LINKS = [
     { href: ROUTES.PRODUCTS, label: t('nav.shop'), dropdown: SHOP_DROPDOWN },
     { href: ROUTES.PRODUCTS + '?category=spice-blends', label: t('nav.bundles'), dropdown: BUNDLES_DROPDOWN },
-    { href: '#', label: t('nav.recipes'), dropdown: null },
+    { href: ROUTES.RECIPES, label: t('nav.recipes'), dropdown: null },
     { href: ROUTES.ABOUT, label: t('nav.about'), dropdown: null },
   ];
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`${ROUTES.PRODUCTS}?search=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery('');
+    }
+  };
 
   return (
     <>
@@ -135,7 +145,7 @@ export function Header() {
             {/* Search + Actions */}
             <div className="flex items-center gap-2 sm:gap-3">
               {/* Search Bar */}
-              <div className="relative hidden sm:block">
+              <form onSubmit={handleSearch} className="relative hidden sm:block">
                 <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#6B3D1E]/40" />
                 <input
                   type="text"
@@ -145,7 +155,7 @@ export function Header() {
                   className={`w-44 rounded-full border border-[#6B3D1E]/15 bg-[#6B3D1E]/[0.03] py-2 pl-9 pr-4 text-sm text-[#6B3D1E] placeholder:text-[#6B3D1E]/40 transition-all focus:w-56 focus:border-[#6B3D1E]/40 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#6B3D1E]/10 lg:w-52 lg:focus:w-64 ${language === 'ml' ? 'font-malayalam' : ''}`}
                   id="header-search"
                 />
-              </div>
+              </form>
 
               {/* Wishlist */}
               <Link

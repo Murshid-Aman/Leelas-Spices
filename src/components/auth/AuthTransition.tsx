@@ -5,7 +5,12 @@ import { useRef, ReactNode } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
-export function AuthTransition({ children }: { children: ReactNode }) {
+interface AuthTransitionProps {
+  children: ReactNode;
+  className?: string;
+}
+
+export function AuthTransition({ children, className = '' }: AuthTransitionProps) {
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -22,7 +27,7 @@ export function AuthTransition({ children }: { children: ReactNode }) {
   );
 
   return (
-    <div ref={containerRef} className="w-full">
+    <div ref={containerRef} className={`w-full ${className}`}>
       {children}
     </div>
   );
