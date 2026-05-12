@@ -1,0 +1,227 @@
+/* ============================================================
+   !! AI AGENT — READ BEFORE EDITING ANYTHING COLOR-RELATED !!
+
+   This is the ONLY file in the entire project where color
+   values are defined. This is intentional and must stay true.
+
+   RULES:
+   1. Never write a hex, rgb, rgba, hsl, or named color value
+      anywhere outside this file. Not in components, not in
+      stylesheets, not in inline styles, not in JS objects.
+
+   2. If a new color is needed, add it here first as a primitive
+      (Layer 1), then create or reuse a semantic token (Layer 2)
+      that references it. Then use that semantic token.
+
+   3. Never reference a primitive variable (e.g. var(--gray-500))
+      from any component or stylesheet. Only semantic variables
+      (e.g. var(--color-text-primary)) leave this file.
+
+   4. If you are unsure which semantic token to use, look through
+      Layer 2 in this file. If none fits, add a new one here.
+      Do not work around this system.
+
+   STRUCTURE:
+   Layer 1 → Primitives   (raw values, internal only)
+   Layer 2 → Semantics    (what the rest of the app uses)
+   ============================================================ */
+
+/* ============================================================
+   COLORS.CSS — Single source of truth for all colors
+
+   STRUCTURE:
+   Layer 1 → Primitives   (raw palette, never referenced in components)
+   Layer 2 → Semantics    (what all components and stylesheets use)
+   ============================================================ */
+
+
+/* ============================================================
+   LAYER 1 — PRIMITIVES
+   These hold the actual color values. Nothing in the project
+   should reference these directly except the semantic layer.
+   ============================================================ */
+
+:root {
+
+  /* ── Cream / Page Backgrounds ── */
+  --cream-50:  #FDFAF5;
+  --cream-100: #F9F7F1;
+  --cream-200: #F8F1E4;
+  --cream-300: #F6F4EF;
+  --cream-400: #F0E6D3;
+  --cream-500: #F0EBE1;
+  --cream-600: #F0EEE6;
+  --cream-700: #EBE1D1;
+  --cream-800: #EBECE1;
+  --cream-900: #E0D4C0;
+  --cream-950: #DDE0CC;
+
+  /* ── Browns — Brand Primary ── */
+  --brown-900: #3B2208;
+  --brown-800: #4A3020;
+  --brown-700: #5A3218;
+  --brown-600: #6B3D1E;
+  --brown-500: #7A6050;
+  --brown-400: #8B5A2B;
+  --brown-300: #A45A34;
+  --brown-200: #C49A6C;
+
+  /* ── Greens ── */
+  --green-900: #2D4A1E;
+  --green-800: #3D4D24;
+  --green-700: #3D6628;
+  --green-600: #4A7A30;
+  --green-500: #536B31;
+  --green-400: #6BA83F;
+  --green-300: #A8C97A;
+  --green-200: #EAF0E2;
+  --green-100: #F0EBE1;
+
+  /* ── Gold / Saffron ── */
+  --gold-500: #C8922A;
+  --gold-400: #DCA912;
+  --gold-300: #E8BF6A;
+
+  /* ── Warm Neutrals (fafafa-range) ── */
+  --neutral-50:  #fafafa;
+  --neutral-100: #fdfbf8;
+
+  /* ── Dark Surface ── */
+  --dark-900: #1E1208;
+
+  /* ── Pure White ── */
+  --white-0: #ffffff;
+
+  /* ── Pure Black ── */
+  --black-0: #000000;
+
+  /* ── Google Brand Colors (SVG logo) ── */
+  --google-blue:   #4285F4;
+  --google-green:  #34A853;
+  --google-yellow: #FBBC05;
+  --google-red:    #EA4335;
+
+  /* ── Payment Card Chip Colors ── */
+  --visa-blue:       #1a1f71;
+  --mastercard-dark: #252525;
+
+  /* ── Red (Shield icon in product detail) ── */
+  --red-600: #C8302A;
+
+  /* ── Decorative / Animated Accents ── */
+  --yellow-400: #facc15;
+  --amber-300:  #fcd34d;
+  --amber-400:  #fbbf24;
+}
+
+
+/* ============================================================
+   LAYER 2 — SEMANTICS
+   These are the ONLY variables that components and stylesheets
+   should ever reference. They map meaning → primitive.
+   To retheme or update a color, change it here — nothing else.
+   ============================================================ */
+
+:root {
+
+  /* --- Page Backgrounds --- */
+  --color-bg-page:        var(--cream-50);
+  --color-bg-surface:     var(--cream-200);
+  --color-bg-muted:       var(--cream-400);
+  --color-bg-elevated:    var(--cream-300);
+  --color-bg-input:       var(--cream-200);
+  --color-bg-neutral:     var(--neutral-50);
+  --color-bg-page-alt:    var(--cream-100);
+  --color-bg-footer:      var(--cream-100);
+  --color-bg-footer-bar:  var(--cream-600);
+  --color-bg-dark:        var(--brown-900);
+  --color-bg-dark-surface: var(--dark-900);
+  --color-bg-white:       var(--white-0);
+  --color-bg-newsletter:  var(--cream-500);
+
+  /* --- Overlay / Backdrop --- */
+  --color-overlay-dark:   rgba(0, 0, 0, 0.50);
+  --color-overlay-light:  rgba(0, 0, 0, 0.20);
+  --color-overlay-hero:   rgba(0, 0, 0, 0.60);
+  --color-overlay-wizard: rgba(59, 34, 8, 0.40);
+
+  /* --- Shadow Colors --- */
+  --color-shadow-sm:      rgba(0, 0, 0, 0.04);
+  --color-shadow-md:      rgba(0, 0, 0, 0.08);
+  --color-shadow-black:   rgba(0, 0, 0, 0.10);
+
+  /* --- Text — Primary & Secondary --- */
+  --color-text-heading:   var(--brown-900);
+  --color-text-body:      var(--brown-800);
+  --color-text-muted:     var(--brown-500);
+  --color-text-inverse:   var(--white-0);
+  --color-text-dark:      #111111;
+
+  /* --- Brand — Brown Warm --- */
+  --color-brand-primary:  var(--brown-600);
+  --color-brand-hover:    var(--brown-700);
+  --color-brand-deep:     var(--brown-900);
+  --color-brand-cinnamon: var(--brown-400);
+  --color-brand-sand:     var(--brown-200);
+  --color-brand-warm:     var(--brown-300);
+
+  /* --- Green — Accent --- */
+  --color-green-primary:  var(--green-600);
+  --color-green-hover:    var(--green-700);
+  --color-green-deep:     var(--green-900);
+  --color-green-footer:   var(--green-500);
+  --color-green-footer-hover: var(--green-800);
+  --color-green-leaf:     var(--green-400);
+  --color-green-sage:     var(--green-300);
+  --color-green-subtle:   var(--green-200);
+  --color-green-icon-bg:  var(--green-100);
+
+  /* --- Gold — Accent --- */
+  --color-gold-primary:   var(--gold-500);
+  --color-gold-accent:    var(--gold-400);
+  --color-gold-light:     var(--gold-300);
+
+  /* --- Border --- */
+  --color-border-warm:    var(--cream-900);
+  --color-border-muted:   var(--cream-400);
+  --color-border-subtle:  var(--cream-200);
+
+  /* --- Decorative --- */
+  --color-decor-bg:       var(--cream-700);
+  --color-decor-social-bg: var(--cream-800);
+  --color-decor-social-hover: var(--cream-950);
+
+  /* --- Footer Text --- */
+  --color-footer-body:    #605A51;
+
+  /* --- Status — Tailwind-derived (kept as Tailwind classes) --- */
+  /* These are only defined here for reference; the actual Tailwind
+     utility classes (bg-red-50, text-red-600, etc.) are managed
+     by the Tailwind theme and are intentionally left as-is. */
+
+  /* --- Google OAuth SVG (kept as fill="" attrs) --- */
+  --color-google-blue:    var(--google-blue);
+  --color-google-green:   var(--google-green);
+  --color-google-yellow:  var(--google-yellow);
+  --color-google-red:     var(--google-red);
+
+  /* --- Payment Card Chips --- */
+  --color-visa:           var(--visa-blue);
+  --color-mastercard:     var(--mastercard-dark);
+
+  /* --- Product Detail Shield --- */
+  --color-icon-shield:    var(--red-600);
+
+  /* --- Decorative Animated Dots (RecipeHero) --- */
+  --color-decor-yellow:   var(--yellow-400);
+  --color-decor-amber:    var(--amber-300);
+  --color-decor-amber-bg: rgba(251, 191, 36, 0.20);
+
+  /* --- Decorative Blobs (RecipeHero) --- */
+  --color-blob-light:     rgba(255, 255, 255, 0.10);
+  --color-blob-amber:     rgba(251, 191, 36, 0.20);
+
+  /* --- Hero Badge --- */
+  --color-badge-glass-bg:  rgba(255, 255, 255, 0.20);
+  --color-badge-glass-border: rgba(255, 255, 255, 0.30);
+}

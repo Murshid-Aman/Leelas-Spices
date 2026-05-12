@@ -1,38 +1,27 @@
+/* All color values live in colors.css — do not hardcode colors here. Use semantic variables only: var(--color-*) */
+@import "./colors.css";
 @import "tailwindcss";
 
 :root {
-  --background: #FDFAF5;
-  --foreground: #3B2208;
+  /* Legacy compatibility — these feed Tailwind's --color-background / --color-foreground */
+  --background: var(--color-bg-page);
+  --foreground: var(--color-text-heading);
 
-  /* ── Brand Browns ── */
-  --color-brown-deep:     #3B2208;
-  --color-brown-warm:     #6B3D1E;
-  --color-brown-cinnamon: #8B5A2B;
-  --color-brown-sand:     #C49A6C;
+  /* ── Brand aliases (reference colors.css semantics) ── */
+  --color-brown-deep:     var(--color-brand-deep);
+  --color-brown-warm:     var(--color-brand-primary);
+  --color-brown-cinnamon: var(--color-brand-cinnamon);
+  --color-brown-sand:     var(--color-brand-sand);
 
-  /* ── Brand Greens ── */
-  --color-green-deep:     #2D4A1E;
-  --color-green-leaf:     #4A7A30;
-  --color-green-fresh:    #6BA83F;
-  --color-green-sage:     #A8C97A;
+  --color-green-deep:     var(--color-green-deep);
+  --color-green-leaf:     var(--color-green-primary);
+  --color-green-fresh:    var(--color-green-leaf);
+  --color-green-sage:     var(--color-green-sage);
 
-  /* ── Gold Accent ── */
-  --color-gold:           #C8922A;
-  --color-gold-light:     #E8BF6A;
+  --color-gold:           var(--color-gold-primary);
+  --color-gold-light:     var(--color-gold-light);
 
-  /* ── Backgrounds ── */
-  --color-bg-page:        #FDFAF5;
-  --color-bg-surface:     #F8F1E4;
-  --color-bg-muted:       #F0E6D3;
-  --color-border-warm:    #E0D4C0;
-
-  /* ── Text ── */
-  --color-text-heading:   #3B2208;
-  --color-text-body:      #4A3020;
-  --color-text-muted:     #7A6050;
-
-  /* ── Dark Surfaces ── */
-  --color-dark-bark:      #1E1208;
+  --color-dark-bark:      var(--color-bg-dark-surface);
 }
 
 @theme inline {
@@ -80,13 +69,6 @@
   --font-heading: var(--font-inter);
   --font-body: var(--font-inter);
   --font-sans: var(--font-inter);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1E1208;
-    --foreground: #F8F1E4;
-  }
 }
 
 /* Base Styles */

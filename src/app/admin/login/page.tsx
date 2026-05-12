@@ -35,10 +35,10 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#FDFAF5] px-4 py-12">
+    <div className="flex min-h-screen items-center justify-center bg-[var(--color-bg-page)] px-4 py-12">
       {/* Main Card Container */}
       <div className="w-full max-w-md">
-        <div className="rounded-3xl bg-[#F8F1E4] p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#3B2208]/5">
+        <div className="rounded-3xl bg-[var(--color-bg-surface)] p-8 sm:p-12 shadow-lg shadow-[var(--color-shadow-sm)] border border-[var(--color-text-heading)]/5">
           {/* Logo Header */}
           <div className="mb-10 text-center">
             <Link href={ROUTES.HOME} className="inline-block transition-transform hover:scale-105 active:scale-95">
@@ -54,10 +54,10 @@ export default function AdminLoginPage() {
           </div>
 
           <div className="mb-10 text-center">
-            <h1 className="mt-8 text-3xl font-bold text-[#3B2208] ">
+            <h1 className="mt-8 text-3xl font-bold text-[var(--color-text-heading)] ">
               Admin Console
             </h1>
-            <p className="mt-2 text-sm text-[#3B2208]/50">
+            <p className="mt-2 text-sm text-[var(--color-text-heading)]/50">
               Log in with your administrator credentials.
             </p>
           </div>
@@ -72,20 +72,20 @@ export default function AdminLoginPage() {
             <div className="space-y-6">
               {/* Email */}
               <div>
-                <label className="text-[11px] font-bold uppercase tracking-widest text-[#3B2208]/40">Admin Email</label>
+                <label className="text-[11px] font-bold uppercase tracking-widest text-[var(--color-text-heading)]/40">Admin Email</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="admin@leelas.com"
                   required
-                  className="mt-1.5 w-full border-b-2 border-[#3B2208]/12 bg-transparent pb-2.5 text-sm text-[#3B2208] placeholder:text-[#3B2208]/25 focus:border-[#6B3D1E]/40 focus:outline-none transition-colors"
+                  className="mt-1.5 w-full border-b-2 border-[var(--color-text-heading)]/12 bg-transparent pb-2.5 text-sm text-[var(--color-text-heading)] placeholder:text-[var(--color-text-heading)]/25 focus:border-[var(--color-brand-primary)]/40 focus:outline-none transition-colors"
                 />
               </div>
 
               {/* Password */}
               <div className="relative">
-                <label className="text-[11px] font-bold uppercase tracking-widest text-[#3B2208]/40">Password</label>
+                <label className="text-[11px] font-bold uppercase tracking-widest text-[var(--color-text-heading)]/40">Password</label>
                 <div className="relative">
                   <input
                     type={showPassword ? 'text' : 'password'}
@@ -93,12 +93,12 @@ export default function AdminLoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
                     required
-                    className="mt-1.5 w-full border-b-2 border-[#3B2208]/12 bg-transparent pb-2.5 pr-10 text-sm text-[#3B2208] placeholder:text-[#3B2208]/25 focus:border-[#6B3D1E]/40 focus:outline-none transition-colors"
+                    className="mt-1.5 w-full border-b-2 border-[var(--color-text-heading)]/12 bg-transparent pb-2.5 pr-10 text-sm text-[var(--color-text-heading)] placeholder:text-[var(--color-text-heading)]/25 focus:border-[var(--color-brand-primary)]/40 focus:outline-none transition-colors"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-0 bottom-2.5 text-[#3B2208]/30 hover:text-[#6B3D1E]"
+                    className="absolute right-0 bottom-2.5 text-[var(--color-text-heading)]/30 hover:text-[var(--color-brand-primary)]"
                   >
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
@@ -109,18 +109,18 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full h-12 rounded-full bg-[#6B3D1E] text-sm font-bold uppercase tracking-[0.15em] text-white transition-all hover:bg-[#5A3218] active:scale-[0.98] disabled:opacity-60"
+              className="w-full h-12 rounded-full bg-[var(--color-brand-primary)] text-sm font-bold uppercase tracking-[0.15em] text-white transition-all hover:bg-[var(--color-brand-hover)] active:scale-[0.98] disabled:opacity-60"
             >
               {isLoading ? 'Authenticating...' : 'Enter Dashboard'}
             </button>
           </form>
 
           {/* Footer Branding */}
-          <div className="mt-12 text-center border-t border-[#3B2208]/6 pt-8">
-            <div className="flex items-center justify-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-[#3B2208]/35 mb-2">
+          <div className="mt-12 text-center border-t border-[var(--color-text-heading)]/6 pt-8">
+            <div className="flex items-center justify-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-[var(--color-text-heading)]/35 mb-2">
               <ShieldCheck className="h-3.5 w-3.5" /> Secure Admin Access
             </div>
-            <p className="text-[10px] text-[#3B2208]/30 leading-relaxed max-w-[200px] mx-auto">
+            <p className="text-[10px] text-[var(--color-text-heading)]/30 leading-relaxed max-w-[200px] mx-auto">
               Authorized access only. All activities are logged.
             </p>
           </div>

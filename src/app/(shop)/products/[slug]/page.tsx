@@ -52,19 +52,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   return (
-    <div className="bg-[#fdfbf8] min-h-screen">
+    <div className="bg-[var(--color-bg-neutral)] min-h-screen">
       <div className="mx-auto max-w-[1600px] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
       {/* Breadcrumbs */}
-      <nav className="mb-6 flex items-center gap-1.5 text-sm text-[#4A3020]/70" aria-label="Breadcrumb">
-        <Link href={ROUTES.HOME} className="hover:text-[#6B3D1E] transition-colors">
+      <nav className="mb-6 flex items-center gap-1.5 text-sm text-[var(--color-text-body)]/70" aria-label="Breadcrumb">
+        <Link href={ROUTES.HOME} className="hover:text-[var(--color-brand-primary)] transition-colors">
           Home
         </Link>
         <ChevronRight className="h-3.5 w-3.5" />
-        <Link href={ROUTES.PRODUCTS} className="hover:text-[#6B3D1E] transition-colors">
+        <Link href={ROUTES.PRODUCTS} className="hover:text-[var(--color-brand-primary)] transition-colors">
           Shop
         </Link>
         <ChevronRight className="h-3.5 w-3.5" />
-        <span className="font-medium text-[#3B2208]">{product.name}</span>
+        <span className="font-medium text-[var(--color-text-heading)]">{product.name}</span>
       </nav>
 
       <StructuredData product={product} />

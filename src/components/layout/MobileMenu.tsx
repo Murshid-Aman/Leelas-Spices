@@ -15,7 +15,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const { t, language, setLanguage } = useTranslation();
   const { isAuthenticated } = useAuthStore();
 
-  const MENU_ITEMS = [
+  const MENU_ITEMS: Array<{ href: string; label: string; icon: React.ElementType }> = [
     { href: ROUTES.HOME, label: t('nav.home') || 'Home', icon: Home },
     { href: ROUTES.PRODUCTS, label: t('nav.shop') || 'Shop', icon: ShoppingBag },
     { href: ROUTES.RECIPES, label: t('nav.recipes') || 'Recipes', icon: ChefHat },
@@ -44,7 +44,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
       {/* Drawer */}
       <div
-        className={`fixed right-0 top-0 z-50 h-full w-72 transform bg-[#3B2208] shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed right-0 top-0 z-50 h-full w-72 transform bg-[var(--color-bg-dark)] shadow-2xl transition-transform duration-300 ease-out md:hidden ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -71,7 +71,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 onClick={onClose}
                 className={`flex items-center gap-3 rounded-xl px-4 py-3 text-white/80 transition-colors hover:bg-white/5 hover:text-white ${language === 'ml' ? 'font-malayalam' : ''}`}
               >
-                <Icon className="h-5 w-5 text-[#6B3D1E]" />
+                <Icon className="h-5 w-5 text-[var(--color-brand-primary)]" />
                 <span className="font-medium">{item.label}</span>
               </Link>
             );
@@ -91,7 +91,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               }}
               className={`flex-1 rounded-xl py-3 text-sm font-bold transition-all ${
                 language === 'en' 
-                  ? 'bg-[#6B3D1E] text-white shadow-lg' 
+                  ? 'bg-[var(--color-brand-primary)] text-white shadow-lg' 
                   : 'bg-white/5 text-white/60 hover:bg-white/10'
               }`}
             >
@@ -104,7 +104,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               }}
               className={`flex-1 rounded-xl py-3 text-sm font-bold font-malayalam transition-all ${
                 language === 'ml' 
-                  ? 'bg-[#6B3D1E] text-white shadow-lg' 
+                  ? 'bg-[var(--color-brand-primary)] text-white shadow-lg' 
                   : 'bg-white/5 text-white/60 hover:bg-white/10'
               }`}
             >

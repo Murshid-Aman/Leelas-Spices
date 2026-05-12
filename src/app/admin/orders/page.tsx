@@ -23,35 +23,35 @@ export default function AdminOrdersPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className=" text-4xl font-bold text-[#3B2208]">Orders & Shipments</h1>
-        <p className="mt-2 text-[#3B2208]/50">Monitor sales and manage fulfillment logistics.</p>
+        <h1 className=" text-4xl font-bold text-[var(--color-text-heading)]">Orders & Shipments</h1>
+        <p className="mt-2 text-[var(--color-text-heading)]/50">Monitor sales and manage fulfillment logistics.</p>
       </div>
 
       {/* Toolbar */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
-          <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#3B2208]/20" />
+          <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[var(--color-text-heading)]/20" />
           <input 
             type="text" 
             placeholder="Search by Order ID or Customer..."
-            className="w-full rounded-2xl border border-[#3B2208]/10 bg-[#F8F1E4] py-4 pl-12 pr-4 text-sm text-[#3B2208] focus:border-[#6B3D1E] focus:outline-none"
+            className="w-full rounded-2xl border border-[var(--color-text-heading)]/10 bg-[var(--color-bg-surface)] py-4 pl-12 pr-4 text-sm text-[var(--color-text-heading)] focus:border-[var(--color-brand-primary)] focus:outline-none"
           />
         </div>
         <div className="flex gap-3">
-          <button className="flex items-center gap-2 rounded-2xl border border-[#3B2208]/10 bg-[#F8F1E4] px-6 py-4 text-sm font-bold text-[#3B2208]/60 hover:bg-[#3B2208]/5">
+          <button className="flex items-center gap-2 rounded-2xl border border-[var(--color-text-heading)]/10 bg-[var(--color-bg-surface)] px-6 py-4 text-sm font-bold text-[var(--color-text-heading)]/60 hover:bg-[var(--color-text-heading)]/5">
             <Calendar className="h-4 w-4" /> Date Range
           </button>
-          <button className="flex items-center gap-2 rounded-2xl border border-[#3B2208]/10 bg-[#F8F1E4] px-6 py-4 text-sm font-bold text-[#3B2208]/60 hover:bg-[#3B2208]/5">
+          <button className="flex items-center gap-2 rounded-2xl border border-[var(--color-text-heading)]/10 bg-[var(--color-bg-surface)] px-6 py-4 text-sm font-bold text-[var(--color-text-heading)]/60 hover:bg-[var(--color-text-heading)]/5">
             <Download className="h-4 w-4" /> Export
           </button>
         </div>
       </div>
 
       {/* Orders Table */}
-      <div className="overflow-hidden rounded-[40px] border border-[#3B2208]/5 bg-[#F8F1E4] shadow-sm">
+      <div className="overflow-hidden rounded-[40px] border border-[var(--color-text-heading)]/5 bg-[var(--color-bg-surface)] shadow-sm">
         <table className="w-full text-left">
           <thead>
-            <tr className="border-b border-[#6B3D1E]/10 bg-[#6B3D1E]/[0.03] text-[11px] font-bold uppercase tracking-[0.2em] text-[#6B3D1E]/60">
+            <tr className="border-b border-[var(--color-brand-primary)]/10 bg-[var(--color-brand-primary)]/[0.03] text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--color-brand-primary)]/60">
               <th className="px-8 py-5">Order ID</th>
               <th className="px-8 py-5">Date</th>
               <th className="px-8 py-5">Customer</th>
@@ -61,12 +61,12 @@ export default function AdminOrdersPage() {
               <th className="px-8 py-5 text-right">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#3B2208]/5">
+          <tbody className="divide-y divide-[var(--color-text-heading)]/5">
             {MOCK_ADMIN_ORDERS.map((order) => (
-              <tr key={order.id} className="group hover:bg-[#6B3D1E]/[0.02] transition-colors">
-                <td className="px-8 py-6 font-bold text-[#3B2208]">{order.id}</td>
-                <td className="px-8 py-6 text-sm text-[#3B2208]/60 font-medium">{order.date}</td>
-                <td className="px-8 py-6 text-sm font-bold text-[#3B2208]">{order.customer}</td>
+              <tr key={order.id} className="group hover:bg-[var(--color-brand-primary)]/[0.02] transition-colors">
+                <td className="px-8 py-6 font-bold text-[var(--color-text-heading)]">{order.id}</td>
+                <td className="px-8 py-6 text-sm text-[var(--color-text-heading)]/60 font-medium">{order.date}</td>
+                <td className="px-8 py-6 text-sm font-bold text-[var(--color-text-heading)]">{order.customer}</td>
                 <td className="px-8 py-6">
                   <div className="flex items-center gap-2">
                     <CreditCard className="h-3.5 w-3.5 text-green-500" />
@@ -81,9 +81,9 @@ export default function AdminOrdersPage() {
                     {order.status}
                   </span>
                 </td>
-                <td className="px-8 py-6 font-bold text-[#6B3D1E]">{formatPrice(order.total)}</td>
+                <td className="px-8 py-6 font-bold text-[var(--color-brand-primary)]">{formatPrice(order.total)}</td>
                 <td className="px-8 py-6 text-right">
-                  <button className="p-2 text-[#3B2208]/20 hover:text-[#6B3D1E] transition-colors">
+                  <button className="p-2 text-[var(--color-text-heading)]/20 hover:text-[var(--color-brand-primary)] transition-colors">
                     <Eye className="h-5 w-5" />
                   </button>
                 </td>

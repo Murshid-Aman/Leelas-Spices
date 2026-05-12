@@ -97,7 +97,7 @@ export function HeroScroll() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative w-full overflow-hidden bg-[#3B2208]" id="hero-carousel">
+    <section ref={containerRef} className="relative w-full overflow-hidden bg-[var(--color-bg-dark)]" id="hero-carousel">
       {/* ── IMAGE SLIDES ── */}
       <div ref={slidesWrapperRef} className="relative h-full w-full">
         {SLIDES.map((slide, i) => (

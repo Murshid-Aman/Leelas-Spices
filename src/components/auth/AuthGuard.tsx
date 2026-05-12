@@ -53,8 +53,8 @@ export function AuthGuard({ children }: AuthGuardProps) {
   // Only block rendering if unauthenticated and on a protected route
   if (!isAuthenticated && isProtectedRoute) {
     return (
-      <div className="flex h-screen w-full items-center justify-center bg-[#FDFAF5]">
-        <div className="animate-pulse text-[#6B3D1E] font-bold text-xl uppercase tracking-widest">
+      <div className="flex h-screen w-full items-center justify-center bg-[var(--color-bg-page)]">
+        <div className="animate-pulse text-[var(--color-brand-primary)] font-bold text-xl uppercase tracking-widest">
           Leela&apos;s Spices
         </div>
       </div>

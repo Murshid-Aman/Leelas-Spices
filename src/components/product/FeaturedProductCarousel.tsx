@@ -61,23 +61,23 @@ export function FeaturedProductCarousel({ products }: FeaturedProductCarouselPro
 
           {/* Right — Details */}
           <div className="flex flex-col items-start px-4 md:px-0">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6B3D1E]/70">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-primary)]/70">
               Featured Artisanal Selection
             </span>
 
-            <h3 className="mt-3 text-3xl font-bold text-[#3B2208] sm:text-4xl lg:text-[2.75rem] lg:leading-tight ">
+            <h3 className="mt-3 text-3xl font-bold text-[var(--color-text-heading)] sm:text-4xl lg:text-[2.75rem] lg:leading-tight ">
               {product.name}
             </h3>
 
-            <p className="mt-4 text-base leading-relaxed text-[#3B2208]/60 max-w-md">
+            <p className="mt-4 text-base leading-relaxed text-[var(--color-text-heading)]/60 max-w-md">
               {product.shortDescription}. {product.description.slice(0, 150)}...
             </p>
 
             <div className="mt-6 flex items-baseline gap-2">
-              <span className="text-3xl font-bold text-[#3B2208] ">
+              <span className="text-3xl font-bold text-[var(--color-text-heading)] ">
                 {formatPrice(product.price)}
               </span>
-              <span className="text-sm text-[#3B2208]/50">
+              <span className="text-sm text-[var(--color-text-heading)]/50">
                 / {product.variants[0]?.weight}
               </span>
             </div>
@@ -86,14 +86,14 @@ export function FeaturedProductCarousel({ products }: FeaturedProductCarouselPro
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <button
                 onClick={() => addItem(product)}
-                className="inline-flex h-12 items-center justify-center rounded-lg bg-[#6B3D1E] px-8 text-sm font-semibold uppercase tracking-wider text-white transition-all hover:bg-[#5A3218] active:scale-[0.98]"
+                className="inline-flex h-12 items-center justify-center rounded-lg bg-[var(--color-brand-primary)] px-8 text-sm font-semibold uppercase tracking-wider text-white transition-all hover:bg-[var(--color-brand-hover)] active:scale-[0.98]"
                 id={`featured-add-to-cart-${product.slug}`}
               >
                 Add to Cart
               </button>
               <button
                 onClick={handleBuyNow}
-                className="inline-flex h-12 items-center justify-center rounded-lg border-[1.5px] border-[#4A7A30] px-8 text-sm font-semibold uppercase tracking-wider text-[#4A7A30] transition-all hover:bg-[#4A7A30]/5 active:scale-[0.98]"
+                className="inline-flex h-12 items-center justify-center rounded-lg border-[1.5px] border-[var(--color-green-primary)] px-8 text-sm font-semibold uppercase tracking-wider text-[var(--color-green-primary)] transition-all hover:bg-[var(--color-green-primary)]/5 active:scale-[0.98]"
               >
                 Buy Now
               </button>
@@ -105,14 +105,14 @@ export function FeaturedProductCarousel({ products }: FeaturedProductCarouselPro
       {/* Left / Right arrows */}
       <button
         onClick={goToPrev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#F8F1E4] shadow-md text-[#3B2208]/60 transition-all hover:shadow-lg hover:text-[#6B3D1E] sm:left-2 lg:-left-4"
+        className="absolute left-0 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-bg-surface)] shadow-md text-[var(--color-text-heading)]/60 transition-all hover:shadow-lg hover:text-[var(--color-brand-primary)] sm:left-2 lg:-left-4"
         aria-label="Previous product"
       >
         <ChevronLeft className="h-5 w-5" />
       </button>
       <button
         onClick={goToNext}
-        className="absolute right-0 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[#F8F1E4] shadow-md text-[#3B2208]/60 transition-all hover:shadow-lg hover:text-[#6B3D1E] sm:right-2 lg:-right-4"
+        className="absolute right-0 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-bg-surface)] shadow-md text-[var(--color-text-heading)]/60 transition-all hover:shadow-lg hover:text-[var(--color-brand-primary)] sm:right-2 lg:-right-4"
         aria-label="Next product"
       >
         <ChevronRight className="h-5 w-5" />
@@ -125,8 +125,8 @@ export function FeaturedProductCarousel({ products }: FeaturedProductCarouselPro
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-[3px] rounded-full transition-all duration-300 ${index === currentIndex
-              ? 'w-8 bg-[#3B2208]'
-              : 'w-4 bg-[#3B2208]/20 hover:bg-[#3B2208]/40'
+              ? 'w-8 bg-[var(--color-text-heading)]'
+              : 'w-4 bg-[var(--color-text-heading)]/20 hover:bg-[var(--color-text-heading)]/40'
               }`}
             aria-label={`Go to product ${index + 1}`}
           />

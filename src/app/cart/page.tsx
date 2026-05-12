@@ -48,7 +48,7 @@ export default function CartPage() {
                 Clear Cart
               </button>
             </div>
-            <div className="divide-y divide-spice-100 rounded-2xl border border-spice-100 bg-[#F8F1E4] p-4">
+            <div className="divide-y divide-spice-100 rounded-2xl border border-spice-100 bg-[var(--color-bg-surface)] p-4">
               {items.map((item) => (
                 <CartItem
                   key={`${item.product.id}-${item.selectedVariant}`}

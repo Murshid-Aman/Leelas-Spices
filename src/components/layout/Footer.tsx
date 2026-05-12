@@ -32,7 +32,7 @@ const FOOTER_LINKS = {
 
 export function Footer() {
   return (
-    <footer className="relative bg-[#F9F7F1] pt-16 pb-0 overflow-hidden">
+    <footer className="relative bg-[var(--color-bg-footer)] pt-16 pb-0 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-8 relative z-10">
         {/* Background Illustration - Now constrained to this container */}
         <div className="absolute right-0 top-0 bottom-0 w-[50%] pointer-events-none z-0 hidden lg:block">
@@ -58,24 +58,24 @@ export function Footer() {
               </div>
             </Link>
 
-            <p className="text-[14px] font-bold text-[#536B31] mb-2 italic">A little spice, a lot of love.</p>
-            <p className="text-[13px] leading-relaxed text-[#605A51] max-w-xs">
+            <p className="text-[14px] font-bold text-[var(--color-green-footer)] mb-2 italic">A little spice, a lot of love.</p>
+            <p className="text-[13px] leading-relaxed text-[var(--color-footer-body)] max-w-xs">
               Bringing you honest, high-quality spices from the best farms across India.
               Made for everyday Indian cooking.
             </p>
 
             {/* Newsletter */}
             <div className="mt-8">
-              <h4 className="text-[12px] font-bold text-[#3B2208] mb-3">Get recipes & offers</h4>
-              <form className="flex w-full max-w-[290px] rounded-xl bg-[#F0EBE1]/60 border border-[#3B2208]/10 p-1 shadow-sm">
+              <h4 className="text-[12px] font-bold text-[var(--color-text-heading)] mb-3">Get recipes & offers</h4>
+              <form className="flex w-full max-w-[290px] rounded-xl bg-[var(--color-bg-newsletter)]/60 border border-[var(--color-text-heading)]/10 p-1 shadow-sm">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 min-w-0 bg-transparent px-3 text-sm text-[#3B2208] placeholder-[#3B2208]/40 outline-none"
+                  className="flex-1 min-w-0 bg-transparent px-3 text-sm text-[var(--color-text-heading)] placeholder-[var(--color-text-heading)]/40 outline-none"
                 />
                 <button
                   type="submit"
-                  className="rounded-lg bg-[#536B31] px-4 py-2 text-xs font-bold text-white transition-all hover:bg-[#3D4D24] active:scale-95 shadow-sm"
+                  className="rounded-lg bg-[var(--color-green-footer)] px-4 py-2 text-xs font-bold text-white transition-all hover:bg-[var(--color-green-footer-hover)] active:scale-95 shadow-sm"
                 >
                   Subscribe
                 </button>
@@ -90,7 +90,7 @@ export function Footer() {
                 { icon: 'youtube', d: 'M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z' },
                 { icon: 'whatsapp', d: 'M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-13.8 8.38 8.38 0 0 1 3.8.9L21 3z' }
               ].map((s) => (
-                <Link key={s.icon} href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EBECE1] text-[#536B31] transition-all hover:bg-[#DDE0CC] hover:scale-110">
+                <Link key={s.icon} href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-decor-social-bg)] text-[var(--color-green-footer)] transition-all hover:bg-[var(--color-decor-social-hover)] hover:scale-110">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d={s.d} />
                     {s.icon === 'instagram' && <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />}
@@ -104,14 +104,14 @@ export function Footer() {
 
           {/* Shop Column */}
           <div>
-            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#536B31]">
+            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--color-green-footer)]">
               Shop
-              <div className="mt-2 h-0.5 w-7 bg-[#536B31]/40"></div>
+              <div className="mt-2 h-0.5 w-7 bg-[var(--color-green-footer)]/40"></div>
             </h3>
             <ul className="space-y-3.5">
               {FOOTER_LINKS.shop.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-[13px] font-medium text-[#605A51] transition-colors hover:text-[#536B31]">
+                  <Link href={link.href} className="text-[13px] font-medium text-[var(--color-footer-body)] transition-colors hover:text-[var(--color-green-footer)]">
                     {link.label}
                   </Link>
                 </li>
@@ -121,14 +121,14 @@ export function Footer() {
 
           {/* Company Column */}
           <div>
-            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#536B31]">
+            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--color-green-footer)]">
               Company
-              <div className="mt-2 h-0.5 w-7 bg-[#536B31]/40"></div>
+              <div className="mt-2 h-0.5 w-7 bg-[var(--color-green-footer)]/40"></div>
             </h3>
             <ul className="space-y-3.5">
               {FOOTER_LINKS.company.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-[13px] font-medium text-[#605A51] transition-colors hover:text-[#536B31]">
+                  <Link href={link.href} className="text-[13px] font-medium text-[var(--color-footer-body)] transition-colors hover:text-[var(--color-green-footer)]">
                     {link.label}
                   </Link>
                 </li>
@@ -138,14 +138,14 @@ export function Footer() {
 
           {/* Support Column */}
           <div>
-            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#536B31]">
+            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--color-green-footer)]">
               Support
-              <div className="mt-2 h-0.5 w-7 bg-[#536B31]/40"></div>
+              <div className="mt-2 h-0.5 w-7 bg-[var(--color-green-footer)]/40"></div>
             </h3>
             <ul className="space-y-3.5">
               {FOOTER_LINKS.support.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-[13px] font-medium text-[#605A51] transition-colors hover:text-[#536B31]">
+                  <Link href={link.href} className="text-[13px] font-medium text-[var(--color-footer-body)] transition-colors hover:text-[var(--color-green-footer)]">
                     {link.label}
                   </Link>
                 </li>
@@ -159,18 +159,18 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-16 bg-[#F0EEE6]/80 backdrop-blur-sm py-6 relative z-10 border-t border-[#3B2208]/5">
+      <div className="mt-16 bg-[var(--color-bg-footer-bar)]/80 backdrop-blur-sm py-6 relative z-10 border-t border-[var(--color-text-heading)]/5">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[12px] font-medium text-[#605A51]/50">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[12px] font-medium text-[var(--color-footer-body)]/50">
             <span>© 2025 Leela's Spices. All rights reserved.</span>
-            <span className="hidden md:inline text-[#605A51]/20">|</span>
+            <span className="hidden md:inline text-[var(--color-footer-body)]/20">|</span>
             <span>Made with ❤️ in India.</span>
-            <span className="hidden md:inline text-[#605A51]/20">|</span>
+            <span className="hidden md:inline text-[var(--color-footer-body)]/20">|</span>
             <span>Bringing purity to every kitchen.</span>
           </div>
 
           <div className="flex items-center gap-5">
-            <span className="text-[10px] font-bold text-[#605A51]/40 uppercase tracking-[0.15em]">We accept</span>
+            <span className="text-[10px] font-bold text-[var(--color-footer-body)]/40 uppercase tracking-[0.15em]">We accept</span>
             <div className="flex flex-wrap items-center gap-2.5">
               {[
                 { name: 'UPI' },
@@ -179,7 +179,7 @@ export function Footer() {
                 { name: 'MASTERCARD' },
                 { name: 'COD' }
               ].map((p) => (
-                <span key={p.name} className="flex h-7 items-center px-3 rounded-lg border border-[#605A51]/10 bg-white/60 text-[9px] font-bold tracking-wider text-[#605A51]/70 shadow-sm">
+                <span key={p.name} className="flex h-7 items-center px-3 rounded-lg border border-[var(--color-footer-body)]/10 bg-white/60 text-[9px] font-bold tracking-wider text-[var(--color-footer-body)]/70 shadow-sm">
                   {p.name}
                 </span>
               ))}

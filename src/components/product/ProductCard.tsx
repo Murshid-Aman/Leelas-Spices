@@ -33,15 +33,15 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className="group relative flex flex-col rounded-[1.75rem] bg-[#F8F1E4] transition-all duration-500 hover:shadow-2xl w-full border border-gray-100/50 overflow-hidden"
+      className="group relative flex flex-col rounded-[1.75rem] bg-[var(--color-bg-surface)] transition-all duration-500 hover:shadow-2xl w-full border border-gray-100/50 overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* ── IMAGE AREA ── */}
       <div className="relative aspect-square overflow-hidden bg-transparent flex items-center justify-center">
         {/* Brand Pill */}
-        <div className="absolute top-4 left-4 z-10 flex items-center justify-center bg-[#F8F1E4] rounded-full p-2 shadow-md transition-transform duration-300 group-hover:scale-110">
-          <Leaf className="h-4 w-4 text-[#6B3D1E]" />
+        <div className="absolute top-4 left-4 z-10 flex items-center justify-center bg-[var(--color-bg-surface)] rounded-full p-2 shadow-md transition-transform duration-300 group-hover:scale-110">
+          <Leaf className="h-4 w-4 text-[var(--color-brand-primary)]" />
         </div>
 
         {/* Product Image */}
@@ -58,7 +58,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Pagination Dots (Visual Only) */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-60">
-          <div className="h-1.5 w-1.5 rounded-full bg-[#4A7A30]" />
+          <div className="h-1.5 w-1.5 rounded-full bg-[var(--color-green-primary)]" />
           <div className="h-1.5 w-1.5 rounded-full bg-gray-200" />
           <div className="h-1.5 w-1.5 rounded-full bg-gray-200" />
         </div>
@@ -67,7 +67,7 @@ export function ProductCard({ product }: ProductCardProps) {
       {/* ── INFO AREA ── */}
       <div className="flex flex-col p-5 pt-1 flex-grow">
         <div className="flex items-center justify-between mb-2">
-          <span className="inline-flex items-center rounded-full bg-[#A8C97A]/20 px-3 py-1 text-[9px] font-bold uppercase tracking-wider text-[#2D4A1E] sm:px-4 sm:py-1.5 sm:text-[10px]">
+          <span className="inline-flex items-center rounded-full bg-[var(--color-green-sage)]/20 px-3 py-1 text-[9px] font-bold uppercase tracking-wider text-[var(--color-green-deep)] sm:px-4 sm:py-1.5 sm:text-[10px]">
             {product.isFeatured ? 'Best Seller' : product.isNew ? 'New Arrival' : 'Premium Spices'}
           </span>
           
@@ -85,7 +85,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <Link href={ROUTES.PRODUCT_DETAIL(product.slug)}>
           <h3 className={cn(
-            "text-[16px] font-bold text-[#111] leading-tight line-clamp-2 min-h-[2.4rem] hover:text-[#6B3D1E] transition-colors sm:text-[18px] sm:min-h-[2.8rem]",
+            "text-[16px] font-bold text-[var(--color-text-dark)] leading-tight line-clamp-2 min-h-[2.4rem] hover:text-[var(--color-brand-primary)] transition-colors sm:text-[18px] sm:min-h-[2.8rem]",
             language === 'ml' && "font-malayalam"
           )}>
             {product.name}
@@ -95,14 +95,14 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="mt-4 flex items-end justify-between">
           <div className="flex flex-col">
             <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-0.5 sm:text-[11px]">Price</span>
-            <span className="text-lg font-bold text-[#C8922A] sm:text-xl">
+            <span className="text-lg font-bold text-[var(--color-gold-primary)] sm:text-xl">
               {formatPrice(product.price)}
             </span>
           </div>
           
           <button
             onClick={handleAddToCart}
-            className="rounded-full bg-[#6B3D1E] px-5 py-2.5 text-xs font-bold text-[#FDFAF5] transition-all hover:bg-[#5A3218] active:scale-95 shadow-xl shadow-black/10"
+            className="rounded-full bg-[var(--color-brand-primary)] px-5 py-2.5 text-xs font-bold text-[var(--color-text-inverse)] transition-all hover:bg-[var(--color-brand-hover)] active:scale-95 shadow-xl shadow-black/10"
           >
             Buy Now
           </button>

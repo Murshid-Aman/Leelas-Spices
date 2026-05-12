@@ -37,17 +37,17 @@ const testimonials: Testimonial[] = [
 
 export function Testimonials() {
   return (
-    <section className="bg-[#F0E6D3] py-20 lg:py-28 overflow-hidden" id="community-testimonials">
+    <section className="bg-[var(--color-bg-muted)] py-20 lg:py-28 overflow-hidden" id="community-testimonials">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#2D4A1E]">
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--color-green-deep)]">
             Our Community
           </span>
-          <h2 className="mt-4 text-3xl font-bold text-[#3B2208] sm:text-4xl lg:text-5xl ">
+          <h2 className="mt-4 text-3xl font-bold text-[var(--color-text-heading)] sm:text-4xl lg:text-5xl ">
             What Our Community Says
           </h2>
-          <p className="mt-4 text-base text-[#3B2208]/50 sm:text-lg max-w-xl mx-auto">
+          <p className="mt-4 text-base text-[var(--color-text-heading)]/50 sm:text-lg max-w-xl mx-auto">
             Real stories from passionate cooks and spice lovers.
           </p>
         </div>
@@ -59,7 +59,7 @@ export function Testimonials() {
             className="absolute left-0 top-6 sm:top-8 w-[260px] sm:w-[290px] z-10 transition-transform duration-500 hover:scale-105 hover:z-30"
             style={{ transform: 'rotate(-6deg)' }}
           >
-            <div className="rounded-2xl bg-[#F8F1E4] p-6 shadow-lg">
+            <div className="rounded-2xl bg-[var(--color-bg-surface)] p-6 shadow-lg">
               {/* Stars */}
               <div className="mb-3 flex gap-0.5">
                 {Array.from({ length: testimonials[0].stars }).map((_, i) => (
@@ -69,7 +69,7 @@ export function Testimonials() {
                   />
                 ))}
               </div>
-              <p className="text-sm leading-relaxed text-[#3B2208]/70 italic">
+              <p className="text-sm leading-relaxed text-[var(--color-text-heading)]/70 italic">
                 {testimonials[0].quote}
               </p>
               <div className="mt-5 flex items-center gap-3">
@@ -85,10 +85,10 @@ export function Testimonials() {
                   </div>
                 )}
                 <div>
-                  <p className="text-sm font-bold text-[#3B2208]">
+                  <p className="text-sm font-bold text-[var(--color-text-heading)]">
                     {testimonials[0].name}
                   </p>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#3B2208]/40">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--color-text-heading)]/40">
                     {testimonials[0].role}
                   </p>
                 </div>
@@ -101,8 +101,8 @@ export function Testimonials() {
             className="absolute left-1/2 top-1/2 w-[280px] sm:w-[320px] z-20 transition-transform duration-500 hover:scale-105 hover:z-30"
             style={{ transform: 'translate(-50%, -50%) rotate(1deg)' }}
           >
-            <div className="rounded-2xl bg-[#F8F1E4] p-7 sm:p-8 shadow-xl border border-saffron-200/40">
-              <p className="text-base sm:text-lg leading-relaxed text-[#3B2208] font-medium">
+            <div className="rounded-2xl bg-[var(--color-bg-surface)] p-7 sm:p-8 shadow-xl border border-saffron-200/40">
+              <p className="text-base sm:text-lg leading-relaxed text-[var(--color-text-heading)] font-medium">
                 {testimonials[1].quote}
               </p>
               {/* Decorative quotation mark */}
@@ -122,10 +122,10 @@ export function Testimonials() {
                   </div>
                 )}
                 <div>
-                  <p className="text-base font-bold text-[#3B2208]">
+                  <p className="text-base font-bold text-[var(--color-text-heading)]">
                     {testimonials[1].name}
                   </p>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#3B2208]/40">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--color-text-heading)]/40">
                     {testimonials[1].role}
                   </p>
                 </div>
@@ -138,7 +138,7 @@ export function Testimonials() {
             className="absolute right-0 bottom-4 sm:bottom-0 w-[250px] sm:w-[280px] z-10 transition-transform duration-500 hover:scale-105 hover:z-30"
             style={{ transform: 'rotate(4deg)' }}
           >
-            <div className="rounded-2xl bg-[#F8F1E4] p-6 shadow-lg">
+            <div className="rounded-2xl bg-[var(--color-bg-surface)] p-6 shadow-lg">
               {/* Stars */}
               <div className="mb-3 flex gap-0.5">
                 {Array.from({ length: testimonials[2].stars }).map((_, i) => (
@@ -148,14 +148,14 @@ export function Testimonials() {
                   />
                 ))}
               </div>
-              <p className="text-sm leading-relaxed text-[#3B2208]/70 italic">
+              <p className="text-sm leading-relaxed text-[var(--color-text-heading)]/70 italic">
                 {testimonials[2].quote}
               </p>
               <div className="mt-5">
-                <p className="text-sm font-bold text-[#3B2208]">
+                <p className="text-sm font-bold text-[var(--color-text-heading)]">
                   {testimonials[2].name}
                 </p>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#3B2208]/40">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--color-text-heading)]/40">
                   {testimonials[2].role}
                 </p>
               </div>

@@ -59,10 +59,10 @@ export default function AdminLayout({
   ];
 
   return (
-    <div className="flex h-screen bg-[#FDFAF5]">
+    <div className="flex h-screen bg-[var(--color-bg-page)]">
       {/* ── Sidebar ── */}
       <aside 
-        className={`fixed inset-y-0 left-0 z-50 flex w-72 flex-col bg-[#6B3D1E] text-white transition-transform duration-300 lg:static lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-72 flex-col bg-[var(--color-brand-primary)] text-white transition-transform duration-300 lg:static lg:translate-x-0 ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -91,11 +91,11 @@ export default function AdminLayout({
                 href={item.href}
                 className={`flex items-center gap-4 rounded-2xl px-6 py-4 text-[15px] font-medium transition-all ${
                   isActive 
-                    ? 'bg-white text-[#6B3D1E] shadow-lg shadow-black/10' 
+                    ? 'bg-white text-[var(--color-brand-primary)] shadow-lg shadow-black/10' 
                     : 'text-white/70 hover:bg-white/10 hover:text-white'
                 }`}
               >
-                <Icon className={`h-5 w-5 ${isActive ? 'text-[#6B3D1E]' : 'text-white/40'}`} />
+                <Icon className={`h-5 w-5 ${isActive ? 'text-[var(--color-brand-primary)]' : 'text-white/40'}`} />
                 {item.label}
               </Link>
             );
@@ -116,22 +116,22 @@ export default function AdminLayout({
       {/* ── Main Content ── */}
       <div className="flex flex-1 flex-col overflow-hidden">
         {/* Navbar */}
-        <header className="flex h-20 items-center justify-between border-b border-[#6B3D1E]/10 bg-[#F8F1E4] px-8">
-          <button onClick={() => setIsSidebarOpen(true)} className="lg:hidden text-[#6B3D1E]">
+        <header className="flex h-20 items-center justify-between border-b border-[var(--color-brand-primary)]/10 bg-[var(--color-bg-surface)] px-8">
+          <button onClick={() => setIsSidebarOpen(true)} className="lg:hidden text-[var(--color-brand-primary)]">
             <Menu className="h-6 w-6" />
           </button>
           
           <div className="flex items-center gap-6 ml-auto">
-            <button className="relative p-2 text-[#6B3D1E]/40 hover:text-[#6B3D1E] transition-colors">
+            <button className="relative p-2 text-[var(--color-brand-primary)]/40 hover:text-[var(--color-brand-primary)] transition-colors">
               <Bell className="h-5 w-5" />
-              <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#6B3D1E] ring-2 ring-white" />
+              <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[var(--color-brand-primary)] ring-2 ring-white" />
             </button>
-            <div className="flex items-center gap-3 border-l pl-6 border-[#6B3D1E]/10">
+            <div className="flex items-center gap-3 border-l pl-6 border-[var(--color-brand-primary)]/10">
               <div className="text-right hidden sm:block">
-                <p className="text-sm font-bold text-[#3B2208]">Admin Manager</p>
-                <p className="text-[10px] font-medium uppercase tracking-widest text-[#6B3D1E]/60">Super Admin</p>
+                <p className="text-sm font-bold text-[var(--color-text-heading)]">Admin Manager</p>
+                <p className="text-[10px] font-medium uppercase tracking-widest text-[var(--color-brand-primary)]/60">Super Admin</p>
               </div>
-              <div className="h-10 w-10 rounded-full bg-[#6B3D1E] text-white flex items-center justify-center font-bold shadow-md shadow-[#6B3D1E]/20">
+              <div className="h-10 w-10 rounded-full bg-[var(--color-brand-primary)] text-white flex items-center justify-center font-bold shadow-md shadow-[var(--color-brand-primary)]/20">
                 A
               </div>
             </div>

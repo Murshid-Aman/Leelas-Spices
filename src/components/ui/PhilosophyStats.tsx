@@ -9,33 +9,33 @@ export function PhilosophyStats() {
         <AnimatedCounter
           end={12}
           duration={2000}
-          className="text-[1.75rem] font-bold text-[#3B2208] sm:text-[2rem] "
+          className="text-[1.75rem] font-bold text-[var(--color-text-heading)] sm:text-[2rem] "
         />
-        <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6B3D1E]/50 sm:text-[11px]">
+        <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-primary)]/50 sm:text-[11px]">
           Terroirs
         </p>
       </div>
-      <div className="w-px self-stretch bg-[#3B2208]/15" />
+      <div className="w-px self-stretch bg-[var(--color-text-heading)]/15" />
       <div className="flex-1 text-center">
         <AnimatedCounter
           end={100}
           suffix="%"
           duration={2200}
-          className="text-[1.75rem] font-bold text-[#3B2208] sm:text-[2rem] "
+          className="text-[1.75rem] font-bold text-[var(--color-text-heading)] sm:text-[2rem] "
         />
-        <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6B3D1E]/50 sm:text-[11px]">
+        <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-primary)]/50 sm:text-[11px]">
           Traceable
         </p>
       </div>
-      <div className="w-px self-stretch bg-[#3B2208]/15" />
+      <div className="w-px self-stretch bg-[var(--color-text-heading)]/15" />
       <div className="flex-1 text-center">
         <AnimatedCounter
           end={0}
           suffix="%"
           duration={1500}
-          className="text-[1.75rem] font-bold text-[#3B2208] sm:text-[2rem] "
+          className="text-[1.75rem] font-bold text-[var(--color-text-heading)] sm:text-[2rem] "
         />
-        <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6B3D1E]/50 sm:text-[11px]">
+        <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-primary)]/50 sm:text-[11px]">
           Additives
         </p>
       </div>

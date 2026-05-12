@@ -28,7 +28,7 @@ export default function HomePage() {
       <HeroScroll />
 
       {/* Featured Products */}
-      <section className="relative overflow-hidden bg-[#F0E6D3] py-16 lg:py-24" id="featured-products">
+      <section className="relative overflow-hidden bg-[var(--color-bg-muted)] py-16 lg:py-24" id="featured-products">
         {/* Pattern background overlay */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -41,10 +41,10 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="mb-12 text-center">
-            <h2 className={`text-3xl font-bold text-[#3B2208] sm:text-4xl lg:text-5xl  ${language === 'ml' ? 'font-malayalam' : ''}`}>
+            <h2 className={`text-3xl font-bold text-[var(--color-text-heading)] sm:text-4xl lg:text-5xl  ${language === 'ml' ? 'font-malayalam' : ''}`}>
               {t('home.featured_title')}
             </h2>
-            <p className={`mt-3 text-base text-[#3B2208]/50 sm:text-lg ${language === 'ml' ? 'font-malayalam' : ''}`}>
+            <p className={`mt-3 text-base text-[var(--color-text-heading)]/50 sm:text-lg ${language === 'ml' ? 'font-malayalam' : ''}`}>
               {t('home.featured_desc')}
             </p>
           </div>
@@ -55,7 +55,7 @@ export default function HomePage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="bg-[#F0E6D3] py-20 lg:py-28" id="our-philosophy">
+      <section className="bg-[var(--color-bg-muted)] py-20 lg:py-28" id="our-philosophy">
         <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
           <div className="grid items-stretch gap-10 md:grid-cols-[45%_1fr] lg:gap-16">
             {/* Left — Image with quote overlay */}
@@ -70,7 +70,7 @@ export default function HomePage() {
                 />
               </div>
               {/* Quote overlay — positioned at bottom-right, overlapping image edge */}
-              <div className="absolute -bottom-4 right-0 max-w-[220px] rounded-lg bg-[#6B3D1E] px-5 py-4 shadow-lg md:right-[-16px]">
+              <div className="absolute -bottom-4 right-0 max-w-[220px] rounded-lg bg-[var(--color-brand-primary)] px-5 py-4 shadow-lg md:right-[-16px]">
                 <p className="text-[13px] italic leading-relaxed text-white/90">
                   &ldquo;We don&apos;t sell spices; we curate moments of sensory clarity.&rdquo;
                 </p>
@@ -79,15 +79,15 @@ export default function HomePage() {
 
             {/* Right — Content */}
             <div className="flex flex-col justify-center py-4 md:py-8">
-              <span className={`text-[11px] font-semibold uppercase tracking-[0.25em] text-[#3B2208]/40 ${language === 'ml' ? 'font-malayalam' : ''}`}>
+              <span className={`text-[11px] font-semibold uppercase tracking-[0.25em] text-[var(--color-text-heading)]/40 ${language === 'ml' ? 'font-malayalam' : ''}`}>
                 {t('home.philosophy_label')}
               </span>
 
-              <h2 className={`mt-6 text-[2.5rem] font-bold leading-[1.08] text-[#3B2208] sm:text-[3rem] lg:text-[3.5rem]  ${language === 'ml' ? 'font-malayalam' : ''}`}>
+              <h2 className={`mt-6 text-[2.5rem] font-bold leading-[1.08] text-[var(--color-text-heading)] sm:text-[3rem] lg:text-[3.5rem]  ${language === 'ml' ? 'font-malayalam' : ''}`}>
                 {t('home.philosophy_title')}
               </h2>
 
-              <p className="mt-8 max-w-[480px] text-[15px] leading-[1.8] text-[#3B2208]/55">
+              <p className="mt-8 max-w-[480px] text-[15px] leading-[1.8] text-[var(--color-text-heading)]/55">
                 Every spice begins its story at the source. From the highlands
                 of Kerala to carefully curated farms, we handpick ingredients at
                 their peak and preserve their natural essence. Through
@@ -103,14 +103,14 @@ export default function HomePage() {
       </section>
 
       {/* Explore Our Spices */}
-      <section className="bg-[#F0E6D3] py-20 lg:py-28" id="explore-categories">
+      <section className="bg-[var(--color-bg-muted)] py-20 lg:py-28" id="explore-categories">
         <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="mb-14 text-center">
-            <h2 className={`text-3xl font-bold text-[#3B2208] sm:text-4xl lg:text-5xl  ${language === 'ml' ? 'font-malayalam' : ''}`}>
+            <h2 className={`text-3xl font-bold text-[var(--color-text-heading)] sm:text-4xl lg:text-5xl  ${language === 'ml' ? 'font-malayalam' : ''}`}>
               {t('home.explore_title')}
             </h2>
-            <p className={`mt-4 text-base text-[#3B2208]/50 sm:text-lg max-w-2xl mx-auto ${language === 'ml' ? 'font-malayalam' : ''}`}>
+            <p className={`mt-4 text-base text-[var(--color-text-heading)]/50 sm:text-lg max-w-2xl mx-auto ${language === 'ml' ? 'font-malayalam' : ''}`}>
               {t('home.explore_desc')}
             </p>
           </div>
@@ -154,10 +154,10 @@ export default function HomePage() {
                 </div>
                 {/* Label */}
                 <div className="mt-5 text-center">
-                  <h3 className={`text-xl font-bold text-[#3B2208] sm:text-2xl  ${language === 'ml' ? 'font-malayalam' : ''}`}>
+                  <h3 className={`text-xl font-bold text-[var(--color-text-heading)] sm:text-2xl  ${language === 'ml' ? 'font-malayalam' : ''}`}>
                     {category.title}
                   </h3>
-                  <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3B2208]/40 sm:text-xs">
+                  <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-heading)]/40 sm:text-xs">
                     {category.subtitle}
                   </p>
                 </div>
@@ -168,14 +168,14 @@ export default function HomePage() {
       </section>
 
       {/* Our Promise */}
-      <section className="bg-[#F0E6D3] py-20 lg:py-28 border-y border-[#3B2208]/10" id="our-promise">
+      <section className="bg-[var(--color-bg-muted)] py-20 lg:py-28 border-y border-[var(--color-text-heading)]/10" id="our-promise">
         <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="mb-14 text-center">
-            <span className={`text-xs font-semibold uppercase tracking-[0.25em] text-[#6B3D1E] ${language === 'ml' ? 'font-malayalam' : ''}`}>
+            <span className={`text-xs font-semibold uppercase tracking-[0.25em] text-[var(--color-brand-primary)] ${language === 'ml' ? 'font-malayalam' : ''}`}>
               {t('home.promise_label')}
             </span>
-            <h2 className={`mt-4 text-3xl font-bold text-[#3B2208] sm:text-4xl lg:text-5xl  ${language === 'ml' ? 'font-malayalam' : ''}`}>
+            <h2 className={`mt-4 text-3xl font-bold text-[var(--color-text-heading)] sm:text-4xl lg:text-5xl  ${language === 'ml' ? 'font-malayalam' : ''}`}>
               {t('home.promise_title')}
             </h2>
           </div>
@@ -206,15 +206,15 @@ export default function HomePage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="group flex flex-col items-center rounded-2xl bg-[#F8F1E4] px-6 py-10 text-center shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+                className="group flex flex-col items-center rounded-2xl bg-[var(--color-bg-surface)] px-6 py-10 text-center shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1"
               >
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#F0E6D3]">
-                  <item.icon className="h-6 w-6 text-[#6B3D1E] transition-transform duration-300 group-hover:scale-110" />
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-bg-muted)]">
+                  <item.icon className="h-6 w-6 text-[var(--color-brand-primary)] transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <h3 className={`text-lg font-bold text-[#3B2208]  ${language === 'ml' ? 'font-malayalam' : ''}`}>
+                <h3 className={`text-lg font-bold text-[var(--color-text-heading)]  ${language === 'ml' ? 'font-malayalam' : ''}`}>
                   {item.title}
                 </h3>
-                <p className={`mt-2 text-sm leading-relaxed text-[#3B2208]/50 max-w-[220px] ${language === 'ml' ? 'font-malayalam' : ''}`}>
+                <p className={`mt-2 text-sm leading-relaxed text-[var(--color-text-heading)]/50 max-w-[220px] ${language === 'ml' ? 'font-malayalam' : ''}`}>
                   {item.desc}
                 </p>
               </div>

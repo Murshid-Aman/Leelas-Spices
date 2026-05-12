@@ -4,7 +4,7 @@ import { Plus } from 'lucide-react';
 
 export function RecipeHero() {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-r from-[#3B2208] to-[#6B3D1E] rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg shadow-amber-900/20">
+    <div className="relative overflow-hidden bg-gradient-to-r from-[var(--color-text-heading)] to-[var(--color-brand-primary)] rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg shadow-amber-900/20">
       <div className="flex flex-col items-center md:items-start text-center md:text-left z-10">
         <h1 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">
           Got a Recipe <br className="hidden md:block" /> That Rocks?
@@ -36,7 +36,7 @@ export function RecipeHero() {
           <div className="absolute -top-2 -right-2 w-4 h-4 bg-yellow-400 rounded-full animate-ping" />
           <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-amber-300 rounded-full animate-pulse" />
         </div>
-        <button className="bg-white text-[#6B3D1E] font-bold px-8 py-4 rounded-2xl flex items-center gap-3 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300">
+        <button className="bg-white text-[var(--color-brand-primary)] font-bold px-8 py-4 rounded-2xl flex items-center gap-3 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300">
           <Plus size={20} />
           Add Recipe
         </button>

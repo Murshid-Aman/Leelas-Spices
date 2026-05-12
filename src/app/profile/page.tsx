@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Profile() {
   return (
-    <div className="bg-[#FDFAF5] min-h-screen">
+    <div className="bg-[var(--color-bg-page)] min-h-screen">
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <ProfilePage />
       </div>

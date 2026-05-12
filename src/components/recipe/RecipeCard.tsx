@@ -33,35 +33,35 @@ export function RecipeCard({ recipe, featured = false }: RecipeCardProps) {
       {/* Content */}
       <div className="p-5 flex flex-col flex-grow">
         <div className="flex items-center justify-between gap-2 mb-2">
-          <h3 className="text-lg font-bold text-[#3B2208] line-clamp-1 group-hover:text-[#6B3D1E] transition-colors">
+          <h3 className="text-lg font-bold text-[var(--color-text-heading)] line-clamp-1 group-hover:text-[var(--color-brand-primary)] transition-colors">
             {recipe.title}
           </h3>
         </div>
         
-        <p className="text-xs text-[#3B2208]/60 line-clamp-2 mb-4 leading-relaxed">
+        <p className="text-xs text-[var(--color-text-heading)]/60 line-clamp-2 mb-4 leading-relaxed">
           {recipe.description}
         </p>
 
         {/* Badges */}
         <div className="flex flex-wrap gap-2 mb-4">
-          <span className="bg-[#F8F1E4] text-[#6B3D1E] text-[10px] font-semibold px-3 py-1 rounded-lg">
+          <span className="bg-[var(--color-bg-surface)] text-[var(--color-brand-primary)] text-[10px] font-semibold px-3 py-1 rounded-lg">
             {recipe.category}
           </span>
-          <span className="bg-[#F8F1E4] text-[#6B3D1E]/70 text-[10px] font-semibold px-2 py-1 rounded-lg flex items-center gap-1">
+          <span className="bg-[var(--color-bg-surface)] text-[var(--color-brand-primary)]/70 text-[10px] font-semibold px-2 py-1 rounded-lg flex items-center gap-1">
             <Flame size={10} /> {recipe.calories}
           </span>
-          <span className="bg-[#F8F1E4] text-[#6B3D1E]/70 text-[10px] font-semibold px-2 py-1 rounded-lg flex items-center gap-1">
+          <span className="bg-[var(--color-bg-surface)] text-[var(--color-brand-primary)]/70 text-[10px] font-semibold px-2 py-1 rounded-lg flex items-center gap-1">
             <Clock size={10} /> {recipe.time}
           </span>
         </div>
 
         {/* Footer */}
-        <div className="mt-auto pt-4 border-t border-[#F0E6D3] flex items-center justify-between">
+        <div className="mt-auto pt-4 border-t border-[var(--color-bg-muted)] flex items-center justify-between">
           <div className="flex items-center gap-1 bg-green-50 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-md">
             <span className="w-2 h-2 bg-green-500 rounded-full" />
             {recipe.difficulty}
           </div>
-          <div className="flex items-center gap-3 text-[#3B2208]/40 text-[11px] font-semibold">
+          <div className="flex items-center gap-3 text-[var(--color-text-heading)]/40 text-[11px] font-semibold">
             <span className="flex items-center gap-1 hover:text-red-500 cursor-pointer transition-colors">
               <Heart size={12} /> {recipe.likes}
             </span>

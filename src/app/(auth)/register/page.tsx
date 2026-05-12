@@ -45,10 +45,10 @@ export default function RegisterPage() {
   return (
     <>
       <div className="mb-4 text-center">
-        <h1 className="mt-2 text-2xl font-bold text-[#3B2208] ">
+        <h1 className="mt-2 text-2xl font-bold text-[var(--color-text-heading)] ">
           Create Account
         </h1>
-        <p className="mt-1 text-xs text-[#3B2208]/50">
+        <p className="mt-1 text-xs text-[var(--color-text-heading)]/50">
           Elevate your culinary journey today.
         </p>
       </div>
@@ -63,33 +63,33 @@ export default function RegisterPage() {
         <div className="space-y-4">
           {/* Full Name */}
           <div>
-            <label className="text-[10px] font-bold uppercase tracking-widest text-[#3B2208]/40">Full Name</label>
+            <label className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-text-heading)]/40">Full Name</label>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Elias Thorne"
               required
-              className="mt-1 w-full border-b border-[#3B2208]/12 bg-transparent pb-2 text-sm text-[#3B2208] placeholder:text-[#3B2208]/25 focus:border-[#6B3D1E]/40 focus:outline-none transition-colors"
+              className="mt-1 w-full border-b border-[var(--color-text-heading)]/12 bg-transparent pb-2 text-sm text-[var(--color-text-heading)] placeholder:text-[var(--color-text-heading)]/25 focus:border-[var(--color-brand-primary)]/40 focus:outline-none transition-colors"
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="text-[10px] font-bold uppercase tracking-widest text-[#3B2208]/40">Email Address</label>
+            <label className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-text-heading)]/40">Email Address</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="elias@atelier.com"
               required
-              className="mt-1 w-full border-b border-[#3B2208]/12 bg-transparent pb-2 text-sm text-[#3B2208] placeholder:text-[#3B2208]/25 focus:border-[#6B3D1E]/40 focus:outline-none transition-colors"
+              className="mt-1 w-full border-b border-[var(--color-text-heading)]/12 bg-transparent pb-2 text-sm text-[var(--color-text-heading)] placeholder:text-[var(--color-text-heading)]/25 focus:border-[var(--color-brand-primary)]/40 focus:outline-none transition-colors"
             />
           </div>
 
           {/* Password */}
           <div className="relative">
-            <label className="text-[10px] font-bold uppercase tracking-widest text-[#3B2208]/40">Password</label>
+            <label className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-text-heading)]/40">Password</label>
             <div className="relative">
               <input
                 type={showPassword ? 'text' : 'password'}
@@ -97,12 +97,12 @@ export default function RegisterPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="mt-1 w-full border-b border-[#3B2208]/12 bg-transparent pb-2 pr-10 text-sm text-[#3B2208] placeholder:text-[#3B2208]/25 focus:border-[#6B3D1E]/40 focus:outline-none transition-colors"
+                className="mt-1 w-full border-b border-[var(--color-text-heading)]/12 bg-transparent pb-2 pr-10 text-sm text-[var(--color-text-heading)] placeholder:text-[var(--color-text-heading)]/25 focus:border-[var(--color-brand-primary)]/40 focus:outline-none transition-colors"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-0 bottom-2 text-[#3B2208]/30 hover:text-[#6B3D1E]"
+                className="absolute right-0 bottom-2 text-[var(--color-text-heading)]/30 hover:text-[var(--color-brand-primary)]"
               >
                 {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
               </button>
@@ -113,14 +113,14 @@ export default function RegisterPage() {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full h-11 rounded-full bg-[#6B3D1E] text-[11px] font-bold uppercase tracking-[0.15em] text-white transition-all hover:bg-[#5A3218] active:scale-[0.98] disabled:opacity-60 mt-2"
+          className="w-full h-11 rounded-full bg-[var(--color-brand-primary)] text-[11px] font-bold uppercase tracking-[0.15em] text-white transition-all hover:bg-[var(--color-brand-hover)] active:scale-[0.98] disabled:opacity-60 mt-2"
         >
           {isLoading ? 'Creating Account...' : 'Create Account'}
         </button>
 
-        <p className="mt-4 text-center text-xs text-[#3B2208]/50">
+        <p className="mt-4 text-center text-xs text-[var(--color-text-heading)]/50">
           Already have an account?{' '}
-          <Link href={ROUTES.LOGIN} className="font-bold text-[#6B3D1E] hover:underline underline-offset-4">
+          <Link href={ROUTES.LOGIN} className="font-bold text-[var(--color-brand-primary)] hover:underline underline-offset-4">
             Sign In
           </Link>
         </p>

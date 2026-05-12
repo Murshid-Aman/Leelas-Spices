@@ -8,7 +8,7 @@ import { ChefHat, Trophy } from 'lucide-react';
 
 export default function RecipesPage() {
   return (
-    <main className="min-h-screen bg-[#FDFAF5] py-20 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[var(--color-bg-page)] py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1600px] mx-auto">
         {/* Header Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 mb-16">
@@ -24,7 +24,7 @@ export default function RecipesPage() {
              <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center">
                 <ChefHat className="text-orange-600" size={24} />
              </div>
-             <h2 className="text-3xl font-black text-[#3B2208]">Recommended</h2>
+             <h2 className="text-3xl font-black text-[var(--color-text-heading)]">Recommended</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
@@ -40,7 +40,7 @@ export default function RecipesPage() {
              <div className="w-12 h-12 rounded-2xl bg-yellow-100 flex items-center justify-center">
                 <Trophy className="text-yellow-600" size={24} />
              </div>
-             <h2 className="text-3xl font-black text-[#3B2208]">Popular</h2>
+             <h2 className="text-3xl font-black text-[var(--color-text-heading)]">Popular</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8">
