@@ -137,22 +137,22 @@ export function HeroScroll() {
       </div>
 
       {/* ── SPINNING BUY NOW BADGE ── */}
-      <div className="absolute bottom-8 right-8 z-[40] sm:bottom-12 sm:right-12">
-        <div className="relative flex h-[90px] w-[90px] items-center justify-center sm:h-[110px] sm:w-[110px]">
+      <div className="absolute bottom-6 right-6 z-[40] sm:bottom-10 sm:right-10">
+        <div className="relative flex h-[80px] w-[80px] items-center justify-center sm:h-[95px] sm:w-[95px]">
           <div ref={badgeRef} className="absolute inset-0">
             <svg viewBox="0 0 110 110" className="h-full w-full">
               <defs>
                 <path id="badge-circle" d="M 55,55 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
               </defs>
-              <text className="fill-white text-[11px] font-bold uppercase tracking-[0.35em]">
+              <text className="fill-white text-[12px] font-bold uppercase tracking-[0.3em]">
                 <textPath href="#badge-circle">
                   ★ BUY NOW ★ SHOP LEELAS ★ BUY NOW ★ SHOP LEELAS
                 </textPath>
               </text>
             </svg>
           </div>
-          <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
-            <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
+            <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>

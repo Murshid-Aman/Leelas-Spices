@@ -37,17 +37,17 @@ const testimonials: Testimonial[] = [
 
 export function Testimonials() {
   return (
-    <section className="bg-[var(--color-bg-muted)] py-20 lg:py-28 overflow-hidden" id="community-testimonials">
+    <section className="bg-[var(--color-bg-muted)] py-16 lg:py-24 overflow-hidden" id="community-testimonials">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--color-green-deep)]">
+        <div className="mb-12 text-center">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[var(--color-green-deep)]">
             Our Community
           </span>
-          <h2 className="mt-4 text-3xl font-bold text-[var(--color-text-heading)] sm:text-4xl lg:text-5xl ">
+          <h2 className="mt-3 text-2xl font-bold text-[var(--color-text-heading)] sm:text-3xl lg:text-4xl ">
             What Our Community Says
           </h2>
-          <p className="mt-4 text-base text-[var(--color-text-heading)]/50 sm:text-lg max-w-xl mx-auto">
+          <p className="mt-3 text-sm text-[var(--color-text-heading)]/50 sm:text-base max-w-xl mx-auto">
             Real stories from passionate cooks and spice lovers.
           </p>
         </div>

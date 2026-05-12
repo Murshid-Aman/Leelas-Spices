@@ -8,7 +8,7 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import { AuthGuard } from '@/components/auth/AuthGuard';
 
 const playfair = Playfair_Display({
-  variable: '--',
+  variable: '--font-playfair',
   subsets: ['latin'],
   display: 'swap',
 });

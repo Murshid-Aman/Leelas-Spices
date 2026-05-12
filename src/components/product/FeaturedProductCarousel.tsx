@@ -46,8 +46,8 @@ export function FeaturedProductCarousel({ products }: FeaturedProductCarouselPro
       <div className="mx-auto max-w-5xl">
         <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
           {/* Left — Image */}
-          <div className="relative flex items-center justify-center py-8 md:py-12">
-            <div className="relative h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96">
+          <div className="relative flex items-center justify-center py-6 md:py-8">
+            <div className="relative h-64 w-64 sm:h-72 sm:w-72 md:h-80 md:w-80">
               <Image
                 src={product.featuredImage || product.image}
                 alt={`${product.name} — premium Indian spice from ${product.origin}`}
@@ -65,7 +65,7 @@ export function FeaturedProductCarousel({ products }: FeaturedProductCarouselPro
               Featured Artisanal Selection
             </span>
 
-            <h3 className="mt-3 text-3xl font-bold text-[var(--color-text-heading)] sm:text-4xl lg:text-[2.75rem] lg:leading-tight ">
+            <h3 className="mt-2 text-2xl font-bold text-[var(--color-text-heading)] sm:text-3xl lg:text-4xl lg:leading-tight ">
               {product.name}
             </h3>
 
@@ -73,11 +73,11 @@ export function FeaturedProductCarousel({ products }: FeaturedProductCarouselPro
               {product.shortDescription}. {product.description.slice(0, 150)}...
             </p>
 
-            <div className="mt-6 flex items-baseline gap-2">
-              <span className="text-3xl font-bold text-[var(--color-text-heading)] ">
+            <div className="mt-4 flex items-baseline gap-2">
+              <span className="text-2xl font-bold text-[var(--color-text-heading)] ">
                 {formatPrice(product.price)}
               </span>
-              <span className="text-sm text-[var(--color-text-heading)]/50">
+              <span className="text-xs text-[var(--color-text-heading)]/50">
                 / {product.variants[0]?.weight}
               </span>
             </div>

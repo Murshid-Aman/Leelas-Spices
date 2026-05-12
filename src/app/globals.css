@@ -66,9 +66,10 @@
   --color-curry-900: #713f12;
 
   /* Fonts */
-  --font-heading: var(--font-inter);
+  --font-heading: var(--font-playfair);
   --font-body: var(--font-inter);
   --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
 }
 
 /* Base Styles */
