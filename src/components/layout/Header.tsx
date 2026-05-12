@@ -8,6 +8,7 @@ import { ShoppingCart, Heart, Search, User, Menu, X, ChevronDown } from 'lucide-
 import { ROUTES, FREE_SHIPPING_THRESHOLD } from '@/lib/constants';
 import { useCart } from '@/hooks/useCart';
 import { useWishlist } from '@/hooks/useWishlist';
+import { useAuthStore } from '@/store/authStore';
 import { useTranslation } from '@/context/LanguageContext';
 import { MobileMenu } from './MobileMenu';
 
@@ -36,6 +37,15 @@ export function Header() {
   const { totalItems, toggleCart } = useCart();
   const { totalItems: wishlistItems } = useWishlist();
   const { language, setLanguage, t } = useTranslation();
+  const { isAuthenticated } = useAuthStore();
+
+  const handleCartToggle = () => {
+    if (!isAuthenticated) {
+      router.push(ROUTES.LOGIN);
+      return;
+    }
+    toggleCart();
+  };
 
   const NAV_LINKS = [
     { href: ROUTES.PRODUCTS, label: t('nav.shop'), dropdown: SHOP_DROPDOWN },
@@ -174,7 +184,7 @@ export function Header() {
 
               {/* Cart */}
               <button
-                onClick={toggleCart}
+                onClick={handleCartToggle}
                 className="relative rounded-lg p-2 text-[var(--color-brand-primary)]/70 transition-colors hover:bg-[var(--color-brand-primary)]/5 hover:text-[var(--color-brand-primary)]"
                 aria-label="Open cart"
                 id="cart-toggle"

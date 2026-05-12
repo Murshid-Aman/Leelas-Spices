@@ -104,7 +104,10 @@ export default function AdminLayout({
 
         <div className="p-4">
           <button 
-            onClick={() => { clearUser(); router.replace(ROUTES.ADMIN.LOGIN); }}
+            onClick={() => { 
+              clearUser();
+              window.location.href = ROUTES.HOME; 
+            }}
             className="flex w-full items-center gap-4 rounded-2xl border border-white/10 px-6 py-4 text-[15px] font-medium text-white/60 transition-all hover:bg-red-500/10 hover:text-red-400"
           >
             <LogOut className="h-5 w-5" />

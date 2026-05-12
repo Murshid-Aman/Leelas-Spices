@@ -29,6 +29,7 @@ import { ProductType } from '@/types';
 import { formatPrice } from '@/lib/utils';
 import { ROUTES } from '@/lib/constants';
 import { useCart } from '@/hooks/useCart';
+import { useAuthStore } from '@/store/authStore';
 import { useTranslation } from '@/context/LanguageContext';
 
 interface ProductDetailProps {
@@ -69,13 +70,23 @@ export function ProductDetail({ product }: ProductDetailProps) {
   );
   const currentPrice = currentVariant?.price ?? product.price;
 
+  const { isAuthenticated } = useAuthStore();
+
   const handleAddToCart = () => {
+    if (!isAuthenticated) {
+      router.push(ROUTES.LOGIN);
+      return;
+    }
     for (let i = 0; i < quantity; i++) {
       addItem(product, selectedVariant);
     }
   };
 
   const handleBuyNow = () => {
+    if (!isAuthenticated) {
+      router.push(ROUTES.LOGIN);
+      return;
+    }
     for (let i = 0; i < quantity; i++) {
       addItem(product, selectedVariant);
     }

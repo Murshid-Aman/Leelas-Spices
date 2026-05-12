@@ -3,7 +3,9 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Heart, Leaf } from 'lucide-react';
+import { useAuthStore } from '@/store/authStore';
 import { ProductType } from '@/types';
 import { formatPrice, cn } from '@/lib/utils';
 import { ROUTES } from '@/lib/constants';
@@ -20,14 +22,24 @@ export function ProductCard({ product }: ProductCardProps) {
   const { toggleItem, isInWishlist } = useWishlist();
   const { t, language } = useTranslation();
   const [isHovered, setIsHovered] = useState(false);
+  const { isAuthenticated } = useAuthStore();
+  const router = useRouter();
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
+    if (!isAuthenticated) {
+      router.push(ROUTES.LOGIN);
+      return;
+    }
     addItem(product);
   };
 
   const handleWishlist = (e: React.MouseEvent) => {
     e.preventDefault();
+    if (!isAuthenticated) {
+      router.push(ROUTES.LOGIN);
+      return;
+    }
     toggleItem(product);
   };
 

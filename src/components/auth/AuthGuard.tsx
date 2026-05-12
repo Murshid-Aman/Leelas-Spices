@@ -25,18 +25,23 @@ export function AuthGuard({ children }: AuthGuardProps) {
       if (pathname.startsWith('/admin')) return;
 
       const isAuthPage = pathname === ROUTES.LOGIN || pathname === ROUTES.REGISTER;
-      const protectedRoutes = [ROUTES.PROFILE, ROUTES.CHECKOUT, ROUTES.WISHLIST];
+      const protectedRoutes = [ROUTES.PROFILE, ROUTES.CHECKOUT, ROUTES.WISHLIST, ROUTES.CART];
       const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route));
       
-      // If NOT authenticated and trying to access a PROTECTED route, redirect to login
-      if (!isAuthenticated && isProtectedRoute) {
-        router.replace(`${ROUTES.LOGIN}?redirect=${pathname}`);
-      }
-      
-      // If IS authenticated and on an AUTH page, redirect to home
-      if (isAuthenticated && isAuthPage) {
-        router.replace(ROUTES.HOME);
-      }
+      // Use a small timeout to avoid race conditions during logout/navigation
+      const timer = setTimeout(() => {
+        // If NOT authenticated and trying to access a PROTECTED route, redirect to login
+        if (!isAuthenticated && isProtectedRoute) {
+          router.replace(`${ROUTES.LOGIN}?redirect=${pathname}`);
+        }
+        
+        // If IS authenticated and on an AUTH page, redirect to home
+        if (isAuthenticated && isAuthPage) {
+          router.replace(ROUTES.HOME);
+        }
+      }, 100);
+
+      return () => clearTimeout(timer);
     }
   }, [isAuthenticated, isMounted, pathname, router]);
 
@@ -47,7 +52,7 @@ export function AuthGuard({ children }: AuthGuardProps) {
   if (pathname.startsWith('/admin')) return <>{children}</>;
 
   const isAuthPage = pathname === ROUTES.LOGIN || pathname === ROUTES.REGISTER;
-  const protectedRoutes = [ROUTES.PROFILE, ROUTES.CHECKOUT, ROUTES.WISHLIST];
+  const protectedRoutes = [ROUTES.PROFILE, ROUTES.CHECKOUT, ROUTES.WISHLIST, ROUTES.CART];
   const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route));
 
   // Only block rendering if unauthenticated and on a protected route

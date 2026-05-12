@@ -148,7 +148,7 @@ export function ProfilePage() {
 
   const handleLogout = () => {
     clearUser();
-    router.push(ROUTES.HOME);
+    window.location.href = ROUTES.HOME;
   };
 
   const statusColor = (s: string) => {
